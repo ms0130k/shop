@@ -1,6 +1,6 @@
 package com.shop.entity;
 
-import com.shop.ItemSellStatus;
+import com.shop.constant.ItemSellStatus;
 import lombok.*;
 
 import javax.persistence.*;
@@ -8,14 +8,13 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name="item")
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 @ToString
 public class Item {
     @Id
     @Column(name = "itme_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
    private Long id;
 
     @Column(nullable = false, length = 50)
