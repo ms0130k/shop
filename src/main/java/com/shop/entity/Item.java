@@ -15,24 +15,24 @@ public class Item {
     @Id
     @Column(name = "itme_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-   private Long id;
+    private Long id;
 
     @Column(nullable = false, length = 50)
-   private String itemNm;
+    private String itemNm;
 
     @Column(name = "price", nullable = false)
-   private int price;
+    private int price;
 
     @Column(nullable = false)
-   private int stockNumber;
+    private int stockNumber;
 
     @Lob
     @Column(nullable = false)
-   private String itemDetail;
+    private String itemDetail;
 
     @Enumerated(EnumType.STRING)
-   private ItemSellStatus itemSellStatus;
+    private ItemSellStatus itemSellStatus;
 
-   private LocalDateTime regTime;
-   private LocalDateTime updateTime;
+    private LocalDateTime regTime;
+    private LocalDateTime updateTime;
 }
