@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
-    xmlns:th="http://www.thymleaf.org">
+    xmlns:th="http://www.thymleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     xmlns:decorate="~{layouts/layout1}">
 
 <th:block layout:fragment="css">
@@ -13,7 +14,7 @@
 <th:block layout:fragment="script">
   <script th:inline="javascript">
     $(document).ready(function() {
-      var errorMessage = [[$(errorMessage)]];
+      var errorMessage = [[${errorMessage}]];
       if (errorMessage != null) {
         alert(errorMessage);
       }
@@ -46,6 +47,7 @@
     <div style="text-align: center">
       <button type="submit" class="btn btn-primary" style="">Submit</button>
     </div>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
   </form>
 
 </div>
