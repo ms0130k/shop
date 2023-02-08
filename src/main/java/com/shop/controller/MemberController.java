@@ -24,7 +24,7 @@ public class MemberController {
         return "member/memberForm";
     }
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "/new")
     public String memberForm(MemberFormDto memberFormDto) {
         Member member = Member.createMember(memberFormDto, passwordEncoder);
         memberService.saveMember(member);
